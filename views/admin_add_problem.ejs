@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Add Problem | IOI Platform</title>
+    <link href="/tailwind.min.css" rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="flex justify-center">
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/submissions">My Submissions</a>
+        <a href="/admin/dashboard">Admin Dashboard</a>
+        <a href="/admin/add-problem">Add Problem</a>
+        <a href="/logout">Logout</a>
+    </nav>
+    <div class="container">
+        <h1 class="text-2xl font-bold mb-4">Add New Problem</h1>
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+        <form action="/admin/add-problem" method="POST">
+            <input type="text" name="title" placeholder="Problem Title" required class="w-full">
+            <textarea name="description" rows="5" placeholder="Problem Description" required class="w-full"></textarea>
+            <textarea name="test_cases" rows="5" placeholder='[{"input": "", "output": "Hello, World!"}, {"input": "3\n1 2 3", "output": "6"}]' required class="w-full"></textarea>
+            <button type="submit">Add Problem</button>
+        </form>
+    </div>
+</body>
+</html>

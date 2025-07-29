@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Submit Solution | IOI Platform</title>
+    <link href="/tailwind.min.css" rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="flex justify-center">
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/submissions">My Submissions</a>
+        <% if (user.role === 'admin') { %>
+            <a href="/admin/dashboard">Admin Dashboard</a>
+        <% } %>
+        <a href="/logout">Logout</a>
+    </nav>
+    <div class="container">
+        <h1 class="text-2xl font-bold mb-4">Submit Solution for <%= problem.title %></h1>
+        <form action="/submit/<%= problemId %>" method="POST">
+            <textarea name="code" rows="10" cols="50" placeholder="Enter your C++ code here" required class="w-full"></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>

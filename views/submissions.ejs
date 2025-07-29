@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Submissions | IOI Platform</title>
+    <link href="/tailwind.min.css" rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="flex justify-center">
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/submissions">My Submissions</a>
+        <% if (user.role === 'admin') { %>
+            <a href="/admin/dashboard">Admin Dashboard</a>
+        <% } %>
+        <a href="/logout">Logout</a>
+    </nav>
+    <div class="container">
+        <h1 class="text-2xl font-bold mb-4">My Submissions</h1>
+        <table>
+            <tr>
+                <th>Problem</th>
+                <th>Status</th>
+                <th>Score</th>
+                <th>Code</th>
+            </tr>
+            <% submissions.forEach(submission => { %>
+                <tr>
+                    <td><a href="/problem/<%= submission.problem_id %>" class="text-blue-600 hover:underline"><%= submission.title %></a></td>
+                    <td><%= submission.status %></td>
+                    <td><%= submission.score %></td>
+                    <td><pre><%= submission.code %></pre></td>
+                </tr>
+            <% }); %>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard | IOI Platform</title>
+    <link href="/tailwind.min.css" rel="stylesheet">
+    <link href="/styles.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="flex justify-center">
+        <a href="/">Home</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/submissions">My Submissions</a>
+        <% if (user.role === 'admin') { %>
+            <a href="/admin/dashboard">Admin Dashboard</a>
+        <% } %>
+        <a href="/logout">Logout</a>
+    </nav>
+    <div class="container">
+        <h1 class="text-2xl font-bold mb-4">Problems</h1>
+        <ul class="list-disc pl-5">
+            <% problems.forEach(problem => { %>
+                <li class="mb-2"><a href="/problem/<%= problem.id %>" class="text-blue-600 hover:underline"><%= problem.title %></a></li>
+            <% }); %>
+        </ul>
+    </div>
+</body>
+</html>
