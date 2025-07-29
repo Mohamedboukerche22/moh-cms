@@ -35,9 +35,13 @@ cd moh-cms
 npm install
 npm start
 ```
+you will find it in 
+`http://localhost:3000`
+
 now you can use moh-cms 
 # admin
 username = `admin`
+
 pass = `hakimthemathking`
 
 
