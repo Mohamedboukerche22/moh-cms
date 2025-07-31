@@ -1,92 +1,112 @@
+/* IOI CMS Design System */
 body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f4f4f9;
+    background-color: #f8f9fa;
+    color: #212529;
 }
 
 nav {
-    background-color: #1a202c;
-    color: white;
-    padding: 1rem;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 0.8rem 1.5rem;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 nav a {
-    color: white;
-    margin-right: 1rem;
+    color: #ecf0f1;
+    margin-right: 1.5rem;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s ease;
 }
 
 nav a:hover {
-    color: #a0aec0;
+    color: #bdc3c7;
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1140px;
     margin: 2rem auto;
-    padding: 1rem;
+    padding: 0 1rem;
 }
 
 .error {
-    color: #e53e3e;
+    color: #e74c3c;
     margin-bottom: 1rem;
+    font-weight: 500;
 }
 
 form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    max-width: 500px;
-    background: white;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    gap: 1.2rem;
+    max-width: 600px;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 6px;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e0e0e0;
 }
 
 input, textarea {
-    padding: 0.5rem;
-    border: 1px solid #e2e8f0;
+    padding: 0.6rem;
+    border: 1px solid #ced4da;
     border-radius: 4px;
+    font-size: 0.95rem;
+    transition: border-color 0.2s ease;
+}
+
+input:focus, textarea:focus {
+    border-color: #3498db;
+    outline: none;
 }
 
 button {
-    padding: 0.75rem;
-    background-color: #2d3748;
+    padding: 0.8rem 1.2rem;
+    background-color: #3498db;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
-    font-weight: 500;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
 }
 
 button:hover {
-    background-color: #4a5568;
+    background-color: #2980b9;
 }
 
 table {
     width: 100%;
     border-collapse: collapse;
     background: white;
-    border-radius: 8px;
+    border-radius: 6px;
     overflow: hidden;
+    box-shadow: 0 1px 15px rgba(0, 0, 0, 0.05);
 }
 
 th, td {
     padding: 1rem;
     text-align: left;
-    border-bottom: 1px solid #e2e8f0;
+    border-bottom: 1px solid #e0e0e0;
 }
 
 th {
-    background-color: #edf2f7;
-    font-weight: 600;
+    background-color: #f8f9fa;
+    font-weight: 700;
+    color: #2c3e50;
 }
 
 pre {
-    background: #f7fafc;
-    padding: 1rem;
+    background: #f8f9fa;
+    padding: 1.2rem;
     border-radius: 4px;
     overflow-x: auto;
+    border: 1px solid #e0e0e0;
+    font-family: 'Consolas', 'Monaco', monospace;
+    line-height: 1.5;
 }
