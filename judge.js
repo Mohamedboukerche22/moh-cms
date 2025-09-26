@@ -19,13 +19,9 @@ async function evaluateSubmission(code, problemId) {
             const execFile = path.join(__dirname, 'temp');
 
             try {
-                // Write code to a temporary file
                 await fs.writeFile(codeFile, code);
-
-                // Compile the C++ code
                 await execPromise(`g++ ${codeFile} -o ${execFile}`);
-
-                // Run each test case
+                
                 for (const test of testCases) {
                     try {
                         const { stdout } = await execPromise(`echo "${test.input}" | ${execFile}`, { timeout: 10000 });
